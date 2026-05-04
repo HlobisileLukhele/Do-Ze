@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO.ZE — The Earth & Motion Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Montserrat', sans-serif;
+            font-weight: 400;
+            background-color: #F5F0E8;
+            color: #3D2B1F;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :root {
+            --cream: #F5F0E8;
+            --cream-light: #FAF7F2;
+            --nude: #D4C4B0;
+            --sand: #C9B8A3;
+            --coffee: #3D2B1F;
+            --coffee-light: #5C4033;
+            --warm-white: #FFFBF5;
+        }
+
+        .newsletter {
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: var(--cream);
+        }
+
+        /* ===== MR PRICE STYLE: BOLD HEADER ===== */
+        .header {
+            position: relative;
+            width: 100%;
+            background-color: var(--cream);
+            text-align: center;
+            padding: 30px 20px 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 500;
+            letter-spacing: 6px;
+            color: var(--coffee);
+            line-height: 1;
+        }
+
+        .logo span {
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--coffee-light);
+            margin-top: 10px;
+        }
+
+        /* ===== HERO: FULL WIDTH PRODUCT SHOT ===== */
+        .hero {
+            width: 100%;
+            position: relative;
+        }
+
+        .hero img {
+            width: 100%;
+            display: block;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background-color: var(--coffee);
+            color: var(--cream);
+            padding: 10px 28px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 50px 24px;
+            text-align: center;
+        }
+
+        .section-cream {
+            background-color: var(--cream-light);
+        }
+
+        .section-nude {
+            background-color: var(--nude);
+        }
+
+        .section-brown {
+            background-color: var(--coffee);
+            color: var(--cream);
+        }
+
+        .section-brown h2,
+        .section-brown h3 {
+            color: var(--cream);
+        }
+
+        .section-brown p {
+            color: var(--nude);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--coffee);
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--coffee);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--coffee-light);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .caption {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sand);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .price-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--coffee);
+            letter-spacing: 1px;
+            margin: 8px 0;
+        }
+
+        /* ===== BUTTONS (Mr Price style: bold, full width on mobile) ===== */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background-color: var(--coffee);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+            border-radius: 0;
+        }
+
+        .btn:hover {
+            background-color: var(--coffee-light);
+        }
+
+        .btn-cream {
+            background-color: var(--cream);
+            color: var(--coffee);
+        }
+
+        .btn-cream:hover {
+            background-color: var(--warm-white);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--coffee);
+            color: var(--coffee);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--coffee);
+            color: var(--cream);
+        }
+
+        /* ===== PRODUCT GRID (Mr Price style: big images, minimal text) ===== */
+        .product-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .product-row {
+            display: flex;
+            gap: 2px;
+            background-color: var(--cream);
+        }
+
+        .product-card {
+            flex: 1;
+            position: relative;
+            background-color: var(--cream-light);
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px 16px 28px;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--coffee);
+            margin-bottom: 4px;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: var(--sand);
+            margin-bottom: 8px;
+        }
+
+        /* ===== FULL WIDTH FEATURE ===== */
+        .feature-full {
+            width: 100%;
+            position: relative;
+        }
+
+        .feature-full img {
+            width: 100%;
+            display: block;
+        }
+
+        .feature-text {
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        /* ===== VALUE PROPS (Mr Price style: simple icons in a row) ===== */
+        .values {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 40px 24px;
+            background-color: var(--cream);
+        }
+
+        .value-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .value-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 14px;
+            stroke: var(--coffee);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .value-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--coffee);
+            margin-bottom: 6px;
+        }
+
+        .value-desc {
+            font-size: 12px;
+            color: var(--sand);
+            line-height: 1.5;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--coffee);
+            padding: 50px 30px 30px;
+            text-align: center;
+            color: var(--cream);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 500;
+            letter-spacing: 6px;
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .footer-tag {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--nude);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cream);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-copy {
+            font-size: 11px;
+            color: var(--sand);
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        .emoji {
+            font-style: normal;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            width: 50px;
+            height: 2px;
+            background-color: var(--coffee);
+            margin: 20px auto;
+            opacity: 0.3;
+        }
+
+        .divider-cream {
+            background-color: var(--cream);
+            opacity: 0.4;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 38px;
+                letter-spacing: 4px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .product-row {
+                flex-direction: column;
+            }
+
+            .values {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="newsletter">
+
+        <!-- ===== HEADER: Clean, bold logo ===== -->
+        <header class="header">
+            <div class="logo">DO<span>·</span>ZĒ</div>
+            <div class="tagline">Premium Motion. Timeless Elegance.</div>
+        </header>
+
+        <!-- ===== HERO: Full width model shot ===== -->
+        <div class="hero">
+            <img src="IMG_0507.jpeg" alt="DO.ZE Earth & Motion Collection - Coffee Brown Set">
+            <div class="hero-caption">
+                <span class="hero-label">The Earth & Motion Collection</span>
+            </div>
+        </div>
+
+        <!-- ===== INTRO SECTION ===== -->
+        <section class="section section-cream">
+            <p class="caption">New Season Drop</p>
+            <h2>Move in Colour <span class="emoji">✨</span></h2>
+            <p>Designed to move with you, from the studio to the streets. Crafted in our signature earth tones — Coffee Brown, Warm Sand & Cream.</p>
+            <a href="#" class="btn">Shop The Collection</a>
+        </section>
+
+        <!-- ===== PRODUCT GRID: Two-up (Mr Price style) ===== -->
+        <div class="product-grid">
+            <div class="product-row">
+                <div class="product-card">
+                    <img src="IMG_0505.jpeg" alt="Signature Sculpt Bra - Coffee Brown">
+                    <div class="product-info">
+                        <div class="product-name">The Sculpt Bra</div>
+                        <div class="product-desc">Coffee Brown</div>
+                        <a href="#" class="btn btn-outline" style="margin-top:8px; padding: 12px 24px; font-size: 11px;">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="IMG_0509.jpeg" alt="Sculpt Shorts - Coffee Brown">
+                    <div class="product-info">
+                        <div class="product-name">The Sculpt Short</div>
+                        <div class="product-desc">Coffee Brown</div>
+                        <a href="#" class="btn btn-outline" style="margin-top:8px; padding: 12px 24px; font-size: 11px;">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FULL WIDTH FEATURE: Flared Pant ===== -->
+        <div class="feature-full">
+            <img src="IMG_0508.jpeg" alt="The Flared Motion Pant - Coffee Brown">
+        </div>
+        <div class="feature-text section-cream">
+            <p class="caption">New Silhouette</p>
+            <h3>The Flared Motion Pant</h3>
+            <p>Retro lines meet modern performance. Flared, flattering, and made for motion.</p>
+            <a href="#" class="btn">Shop Pants</a>
+        </div>
+
+        <!-- ===== SECONDARY COLORWAY: Cream/White ===== -->
+        <section class="section" style="background-color: var(--warm-white);">
+            <p class="caption">Fresh Tone</p>
+            <h2>Clean & Classic <span class="emoji">🤍</span></h2>
+            <p>Same sculpting fit. Same breathable ribbed fabric. In fresh Cream for those who keep it light.</p>
+        </section>
+
+        <div class="product-grid">
+            <div class="product-row">
+                <div class="product-card">
+                    <img src="IMG_0504.jpeg" alt="Cream Set - Bra & Shorts">
+                    <div class="product-info">
+                        <div class="product-name">The Cream Set</div>
+                        <div class="product-desc">Bra + Short</div>
+                        <a href="#" class="btn btn-outline" style="margin-top:8px; padding: 12px 24px; font-size: 11px;">Shop Cream</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="IMG_0506.jpeg" alt="Cream Shorts - Side View">
+                    <div class="product-info">
+                        <div class="product-name">The Everyday Short</div>
+                        <div class="product-desc">Cream</div>
+                        <a href="#" class="btn btn-outline" style="margin-top:8px; padding: 12px 24px; font-size: 11px;">Shop Shorts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== VALUE PROPS ===== -->
+        <div class="values">
+            <div class="value-item">
+                <svg class="value-icon" viewBox="0 0 48 48">
+                    <path d="M24 8 L24 40 M8 24 L40 24" stroke-linecap="round"/>
+                    <circle cx="24" cy="24" r="14"/>
+                </svg>
+                <div class="value-title">High Support</div>
+                <div class="value-desc">Compression that holds</div>
+            </div>
+            <div class="value-item">
+                <svg class="value-icon" viewBox="0 0 48 48">
+                    <path d="M8 36 Q24 12 40 36" stroke-linecap="round"/>
+                    <path d="M14 30 Q24 16 34 30" stroke-linecap="round"/>
+                </svg>
+                <div class="value-title">Breathable</div>
+                <div class="value-desc">Ribbed airflow fabric</div>
+            </div>
+            <div class="value-item">
+                <svg class="value-icon" viewBox="0 0 48 48">
+                    <path d="M4 24 Q12 14 24 24 Q36 34 44 24" stroke-linecap="round"/>
+                </svg>
+                <div class="value-title">Seamless</div>
+                <div class="value-desc">Second-skin finish</div>
+            </div>
+        </div>
+
+        <!-- ===== CTA SECTION ===== -->
+        <section class="section section-brown">
+            <h2 style="color: var(--cream);">Get The Look <span class="emoji">🔥</span></h2>
+            <p style="color: var(--nude);">Tag us @Do.Ze_Active to be featured. We wanna see how you move.</p>
+            <a href="#" class="btn btn-cream" style="margin-top: 20px;">Shop Earth & Motion</a>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-logo">DO·ZĒ</div>
+            <div class="footer-tag">Join the Movement</div>
+            <div class="divider divider-cream"></div>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">Website</a>
+            </div>
+            <p class="footer-copy">
+                © 2026 DO.ZE Activewear. All rights reserved.<br>
+                You're receiving this because you signed up for the good stuff <span class="emoji">😉</span>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
